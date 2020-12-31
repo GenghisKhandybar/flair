@@ -117,8 +117,6 @@ decorate_chunk <- function(chunk_name,
     # convert knitted string to a list with sources separate from output
     knitted <- knitted %>% src_to_list()
 
-    where_sources <-  map(knitted, ~attr(.x, "class")) == "source"
-
     attr(knitted, "class") <- "with_flair"
 
     attr(knitted, "orig_code_text") <- my_code
